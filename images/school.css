@@ -1,0 +1,87 @@
+.white{color:#ffffff;}
+.line{line-height:25px;}
+#bor{margin-top:10px;}
+.title{font-size:14px;font-weight:bold;}
+.whitetitle{font-size:24px;font-weight:bold;color:#000;}
+#lefttitle{font-size:14px;font-weight:bold;color:#3e7312;margin-left:20px;}
+#leftlmtitle{font-size:14px;font-weight:bold;color:#3e7312;padding-left:35px;}
+
+#plist{	margin:2px auto 0;padding:2px;width:230px;float:left;}
+#plist li {line-height:22px;margin:3px;list-style:none;padding-left:15px;}
+#plist li span{color:#434343;font-size:11px;float:right;padding-right:5px;}
+#plist a {font-size:12px;color:#434343;text-decoration:none;}
+#plist a:hover {font-size:12px;color:#cc0000;text-decoration:none;}
+
+#plist1{ margin:0;padding:10px;width:400px;float:left; height:auto;}
+#plist1 li {line-height:22px;margin:3px;list-style:none;padding-left:12px;}
+#plist1 li:hover{transition: width 1s;border-left:3px solid #FFEEC6; line-height:22px;margin:3px;list-style:none;padding-left:12px;}
+#plist1 li span{color:#FFEEC6;font-size:14px;float:right;padding-right:5px;}
+#plist1 a {font-size:14px;color:#FFEEC6;text-decoration:none;}
+#plist1 a:hover {font-size:14px;color:#FFEEC6;text-decoration:none;}
+
+#plist2{ margin:0;padding:10px;width:300px;float:left; height:auto;}
+#plist2 li { line-height:22px;margin:3px;list-style:none;padding-left:12px;}
+#plist2 li:hover{ border-left:3px solid #FFEEC6;line-height:22px;margin:3px;list-style:none;padding-left:12px;}
+#plist2 li span{color:#FFEEC6;font-size:14px;float:right;padding-right:5px;}
+#plist2 a {font-size:14px;color:#FFEEC6;text-decoration:none;}
+#plist2 a:hover {font-size:14px;color:#FFEEC6;text-decoration:none;}
+
+#plist3{ margin:0;padding:0;width:98%;float:left;}
+#plist3 span {line-height:22px;list-style:none;padding-left:15px;display:block;font-size=17px;}
+#plist3 li { line-height:22px;margin:3px;list-style:none;padding-left:15px;}
+#plist3 li:hover{border-left:3px solid #000;line-height:22px;margin:3px;list-style:none;padding-left:15px;}
+#plist3 li span{color:#000;font-size:11px;float:right;padding-right:5px;}
+#plist3 a {font-size:14px;color:#000;text-decoration:none;}
+#plist3 a:hover {font-size:15px;color:#000;text-decoration:none;}
+
+#plist4{ margin:0;padding:10px;width:80px;float:left; height:auto;}
+#plist4 li { line-height:22px;margin:3px;list-style:none;padding-left:15px;}
+#plist4 li:hover {border-left:3px solid #000;line-height:22px;margin:3px;list-style:none;padding-left:15px;}
+#plist4 li span{color:#000;font-size:14px;float:right;padding-right:5px;}
+#plist4 a {font-size:14px;color:#000;text-decoration:none;}
+#plist4 a:hover {font-size:14px;color:#000;text-decoration:none;}
+
+#plist5{ margin:0;padding:10px;width:200px;float:left; height:auto;}
+#plist5 li { line-height:22px;margin:3px;list-style:none;padding-left:12px;}
+#plist5 li:hover{ border-left:3px solid #FFEEC6;line-height:22px;margin:3px;list-style:none;padding-left:12px;}
+#plist5 li span{color:#FFEEC6;font-size:14px;float:right;padding-right:5px;}
+#plist5 a {font-size:14px;color:#FFEEC6;text-decoration:none;}
+#plist5 a:hover {font-size:14px;color:#FFEEC6;text-decoration:none;}
+
+.txt {line-height: 15px;font-size: 14px;color: #000;}
+	
+/*菜单开始*/
+#menu {width:700px;float:left; bottom;line-height:normal;height:50px;margin-left:0px;}
+#menu ul {width:700px;float:left; bottom;line-height:normal;height:50px;margin-left:0px;margin-bottom:0;margin-top:0;margin-right:auto;padding-left:0;}
+#menu li {width:70px;float:left;margin:18px 3px 0 0;padding:0;}
+#menu a {display:block;padding: 0;text-align:center;}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#menu a  {
+	float:none;
+	color:#FFEEC6;
+	font-size:13px;
+	text-decoration: none;
+    font-family: "Helvitica Neue",Helvitica,Arial,"Microsoft YaHei",sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+/* End IE5-Mac hack */
+#menu a:hover  {
+	float:none;
+	color:#FFEEC6;
+	font-size:14px;
+	text-decoration: none;
+    font-family: "Helvitica Neue",Helvitica,Arial,"Microsoft YaHei",sans-serif;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+#menu a span{display:block;background:url("menuline.gif") no-repeat right ;padding:0;text-align:center;}
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#menu a span{float:none;color:#ffffff;font-weight:bold;font-size:14px;TEXT-DECORATION: none;}
+/* End IE5-Mac hack */
+#menu a:hover span {color:#ffff00;font-weight:bold;font-size:14px;TEXT-DECORATION: none;}
+/*菜单结束*/
+
+
+.box{border:1px #cccccc solid; background-color:#ffffff;font-size:12px;color:#434343;font-family: Arial, Helvetica, sans-serif;}
+ textarea{border:1px #cccccc solid; background-color:#ffffff;font-size:12px;color:#434343;font-family: Arial, Helvetica, sans-serif;}

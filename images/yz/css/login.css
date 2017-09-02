@@ -1,0 +1,288 @@
+/* Basic Page */
+body,html{
+    padding: 0;
+    margin: 0;
+    font-family: 'Microsoft Yahei', Tahoma, Helvetica, Arial, SimSun, sans-serif;
+    width: 2150px;
+}
+ul{
+    list-style-type: none;
+}
+a:link, a:visited {
+    color: black;
+    text-decoration:none;
+}
+a:hover, a:active {
+    color: black;
+    text-decoration:none;
+}
+/* Basic page end*/
+/* input,textarea placeholder color */
+
+/* input placeholder color end*/
+/* all */
+.wallpaper{
+    background: black;
+}
+/* all end*/
+/* login */
+.box{
+    font-style: normal;
+    font-weight: normal;
+    position: absolute;
+    left: 30%;
+    top: 30%;
+    padding: 0;
+    width: 600px;
+    height: 224px;
+    background: #FFFBEE;
+    border: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.cont{
+    display: block;
+    float: left;
+    width: 300px;
+    height: auto;
+    margin: 0 0 0;
+    padding-left: 50px;
+    text-align: left;
+}
+.cont form{
+    display: block;
+    height: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    text-align: left;
+    width: 300px;
+}
+.logo{
+    margin-top:50px;
+    height: 40px;
+    width: auto;
+    text-align:center;
+}
+.logo img{
+    height: 40px;
+    width: auto;
+}
+.login{
+    width: auto;
+    height: auto;
+    margin: 0 0 0 ;
+    padding: 0 0 0;
+}
+.login-user{
+    width: 225px;
+    height: 20px;
+    margin-top: 20px;
+    border:1px solid #757e91;
+    padding: 5px 0px 5px 35px;
+    font-size: 14px;
+    float: left;
+    color: black;
+    outline:none;
+    background: transparent url(../image/login/user.png) no-repeat 10px 6px;
+}
+.login-psd{
+    width: 225px;
+    height: 20px;
+    margin-top: 20px;
+    border:1px solid #757e91;
+    padding: 5px 0px 5px 35px;
+    font-size: 14px;
+    float: left;
+    color: black;
+    outline:none;
+    background: transparent url(../image/login/psd.png) no-repeat 10px 5px;
+}
+.login-yz{
+    width: 95px;
+    height: 20px;
+    margin-top: 20px;
+    border:1px solid #757e91;
+    padding: 5px 0px 5px 35px;
+    font-size: 14px;
+    float: left;
+    color: black;
+    outline:none;
+    background: transparent url(../image/login/yz.png) no-repeat 10px 9px;
+}
+.cont form img{
+    width: auto;
+    height: 32px;
+    margin-top: 20px;
+    margin-left:8px;
+}
+.login-submit {
+    width: 260px;
+    margin-top: 20px;
+    float: left;
+    height: 40px;
+}
+.login-submit p{
+    width: 120px;
+    height: auto;
+    margin-right: 0px;
+    float: right;
+    text-align: right;
+    font-size: 12px;
+}
+.login-button {
+    width: 120px;
+    height: 40px;
+    outline:none;
+    background: url(../image/login/login.png) no-repeat white;
+    border: 0;
+    padding: 0px;
+    float: left;
+    cursor:pointer;
+}
+.sites{
+    border-right-color: #948E73;
+    border-right-style: solid;
+    border-right-width: 1px;
+    float: left;
+    width: 249px;
+    height: 224px;
+}
+.sites p{
+    font-size: 17px;
+    text-align: center;
+    color: black;
+    text-decoration:none;
+}
+.api{
+    text-align: center;
+    margin-top: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    width: 120px;
+}
+/* login end*/
+/* sign */
+.box-sign{
+    font-style: normal;
+    font-weight: normal;
+    position: absolute;
+    left: 35%;
+    top: 30%;
+    padding: 0;
+    width: auto;
+    height: 224px;
+    background: white;
+    border: 0;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.cont-sign{
+    display: block;
+    float: right;
+    width: 340px;
+    height: auto;
+    margin: 0 0 0;
+    padding-left: 50px;
+    text-align: left;
+}
+#sign-form{
+    width: 400px;
+    height: auto;
+}
+.tips{
+    width: 60px;
+    height: 25px;
+    margin-left: 7px;
+    margin-top: 15px;
+    font-size: 12px;
+    float: left;
+}
+.tips_false{
+    float: left;
+    color: red;
+}
+.tips_true{
+    float: left;
+    color: forestgreen;
+}
+.tips_0{
+    padding: 10px 0px 0px 0px;
+    float: left;
+    color: black;
+}
+.sign-user{
+    width: 225px;
+    height: 25px;
+    margin-top: 15px;
+    border:1px solid #757e91;
+    padding: 5px 0px 5px 35px;
+    font-size: 14px;
+    float: left;
+    color: black;
+    outline:none;
+    background: transparent url(../image/login/user.png) no-repeat 10px 9px;
+}
+.sign-psd{
+    width: 225px;
+    height: 25px;
+    margin-top: 15px;
+    border:1px solid #757e91;
+    padding: 5px 0px 5px 35px;
+    font-size: 14px;
+    float: left;
+    color: black;
+    outline:none;
+    background: transparent url(../image/login/psd.png) no-repeat 10px 7px;
+}
+
+.sign-submit {
+    width: 260px;
+    margin-top: 30px;
+    float: left;
+    height: 40px;
+}
+.sign-submit p{
+    width: 120px;
+    height: auto;
+    margin-right: 0px;
+    float: right;
+    text-align: right;
+    font-size: 12px;
+}
+.sign-button {
+    width: 120px;
+    height: 40px;
+    outline:none;
+    background: url(../image/login/login.png) no-repeat white;
+    border: 0;
+    padding: 0px;
+    float: left;
+}
+.ap{
+    border-right-color: rgb(235, 235, 235);
+    border-right-style: solid;
+    border-right-width: 1px;
+    float: left;
+    width: 200px;
+    height: 224px;
+}
+.ap p{
+    font-size: 12px;
+    text-align: center;
+    color: black;
+}
+.sign-logo{
+    margin-top: 40px;
+    margin-bottom: 104px;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}.sign-logo img{
+    height: 20px;
+    width: auto;
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+}
+/* sign end*/

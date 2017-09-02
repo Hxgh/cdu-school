@@ -1,0 +1,140 @@
+﻿<%@ CODEPAGE=65001 %>
+Option Explicit
+<% Response.CodePage=65001 %>
+<% Response.Charset="UTF-8" %>
+<!--#include file="UpLoad_Class.asp"-->
+<!--#include file="JSON_2.0.4.asp"-->
+<%
+Dim aspUrl, savePath, saveUrl, maxSize, fileName, fileExt, newFileName, filePath, fileUrl, dirName
+Dim extStr, imageExtStr, flashExtStr, mediaExtStr, fileExtStr
+Dim upload, file, fso, ranNum, hash, ymd, mm, dd, result
+
+aspUrl = Request.ServerVariables("SCRIPT_NAME")
+aspUrl = left(aspUrl, InStrRev(aspUrl, "/"))
+
+'文件保存目录路径
+savePath = "upload/"
+'文件保存目录URL
+saveUrl = aspUrl & "upload/"
+'定义允许上传的文件扩展名
+imageExtStr = "gif|jpg|jpeg|png|bmp"
+flashExtStr = "swf|flv"
+mediaExtStr = "swf|flv|mp3|wav|wma|wmv|mid|avi|mpg|asf|rm|rmvb"
+fileExtStr = "doc|docx|xls|xlsx|ppt|htm|html|txt|zip|rar|gz|bz2"
+'最大文件大小
+maxSize = 5 * 1024 * 1024 '5M
+
+Set fso = Server.CreateObject("Scripting.FileSystemObject")
+If Not fso.FolderExists(Server.mappath(savePath)) Then
+	showError("上传目录不存在。")
+End If
+
+dirName = CheckStr(strleach(request.querystring("dir")))
+If isEmpty(dirName) Then
+	dirName = "image"
+End If
+If instr(lcase("image,flash,media,file"), dirName) < 1 Then
+	showError("目录名不正确。")
+End If
+
+Select Case dirName
+	Case "flash" extStr = flashExtStr
+	Case "media" extStr = mediaExtStr
+	Case "file" extStr = fileExtStr
+	Case Else  extStr = imageExtStr
+End Select
+
+set upload = new AnUpLoad
+upload.Exe = extStr
+upload.MaxSize = maxSize
+upload.GetData()
+if upload.ErrorID>0 then 
+	showError(upload.Description)
+end if
+
+'创建文件夹
+savePath = savePath & dirName & "/"
+saveUrl = saveUrl & dirName & "/"
+If Not fso.FolderExists(Server.mappath(savePath)) Then
+	fso.CreateFolder(Server.mappath(savePath))
+End If
+mm = month(now)
+If mm < 10 Then
+	mm = "0" & mm
+End If
+dd = day(now)
+If dd < 10 Then
+	dd = "0" & dd
+End If
+ymd = year(now) & mm & dd
+savePath = savePath & ymd & "/"
+saveUrl = saveUrl & ymd & "/"
+If Not fso.FolderExists(Server.mappath(savePath)) Then
+	fso.CreateFolder(Server.mappath(savePath))
+End If
+
+set file = upload.files("imgFile")
+if file is nothing then
+	showError("请选择文件。")
+end if
+
+set result = file.saveToFile(savePath, 0, true)
+if result.error then
+	showError(file.Exception)
+end if
+
+filePath = Server.mappath(savePath & file.filename)
+fileUrl = saveUrl & file.filename
+
+Set upload = nothing
+Set file = nothing
+
+If Not fso.FileExists(filePath) Then
+	showError("上传文件失败。")
+End If
+
+Response.AddHeader "Content-Type", "text/html; charset=UTF-8"
+Set hash = jsObject()
+hash("error") = 0
+hash("url") = fileUrl
+hash.Flush
+Response.End
+
+Function showError(message)
+	Response.AddHeader "Content-Type", "text/html; charset=UTF-8"
+	Dim hash
+	Set hash = jsObject()
+	hash("error") = 1
+	hash("message") = message
+	hash.Flush
+	Response.End
+End Function
+
+function strleach(str)'过滤非法字符函数 
+dim strg
+if str="" then exit function 
+strg=replace(str,chr(34),"")' " 
+strg=replace(strg,chr(39),"")' ' 
+strg=replace(strg,chr(60),"")' < 
+strg=replace(strg,chr(62),"")' > 
+strg=replace(strg,chr(37),"")' % 
+strg=replace(strg,chr(38),"")' & 
+strg=replace(strg,chr(40),"")' ( 
+strg=replace(strg,chr(41),"")' ) 
+strg=replace(strg,chr(59),"")' ; 
+strg=replace(strg,chr(43),"")' + 
+strg=replace(strg,chr(45),"")' - 
+strg=replace(strg,chr(91),"")' [ 
+strg=replace(strg,chr(93),"")' ] 
+strg=replace(strg,chr(123),"")' { 
+strg=replace(strg,chr(125),"")' } 
+strleach=strg 
+end function
+
+function CheckStr(str) '过滤非法SQL语句注入
+    CheckStr=replace(replace(replace(replace(str,"<","&lt;"),">","&gt;"),chr(13),"<br>")," ","") 
+   CheckStr=replace(replace(replace(replace(CheckStr,"'",""),"and",""),"insert",""),"set","") 
+    CheckStr=replace(replace(replace(replace(CheckStr,"select",""),"update",""),"delete",""),chr(34),"&quot;") 
+	CheckStr=replace(replace(replace(replace(replace(CheckStr,"*",""),"=",""),"or",""),"mid",""),"count","")
+end function
+%>
